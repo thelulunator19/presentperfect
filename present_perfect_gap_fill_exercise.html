@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gap Fill Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .gap-fill {
+            width: 300px;
+        }
+        .feedback {
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gap Fill Exercise: A Day in the Life of Emily</h1>
+    <p>Fill in the blanks with the correct form of the verb in parentheses. Use past simple, present simple, or present perfect tenses as appropriate.</p>
+    <form id="gap-fill-form">
+        Emily is a busy person. She <input class="gap-fill" type="text" name="q1"> (work) as a teacher for five years now. Every morning, she <input class="gap-fill" type="text" name="q2"> (wake up) early and <input class="gap-fill" type="text" name="q3"> (go) for a run. This morning, she <input class="gap-fill" type="text" name="q4"> (run) five kilometers.<br><br>
+        
+        After her run, she <input class="gap-fill" type="text" name="q5"> (make) breakfast. She usually <input class="gap-fill" type="text" name="q6"> (have) eggs and toast, but today she <input class="gap-fill" type="text" name="q7"> (decide) to have a smoothie instead. Emily <input class="gap-fill" type="text" name="q8"> (always/enjoy) cooking, and she <input class="gap-fill" type="text" name="q9"> (try) many new recipes over the years.<br><br>
+
+        Emily <input class="gap-fill" type="text" name="q10"> (already/teach) at three different schools. She <input class="gap-fill" type="text" name="q11"> (start) her teaching career at a small school in her hometown. Since then, she <input class="gap-fill" type="text" name="q12"> (move) to the city and now <input class="gap-fill" type="text" name="q13"> (teach) at a large high school.<br><br>
+
+        Her students <input class="gap-fill" type="text" name="q14"> (always/like) her classes because she <input class="gap-fill" type="text" name="q15"> (make) learning fun. She <input class="gap-fill" type="text" name="q16"> (recently/introduce) new technology into her lessons, which <input class="gap-fill" type="text" name="q17"> (help) her students learn better.<br><br>
+
+        In the afternoons, Emily <input class="gap-fill" type="text" name="q18"> (often/volunteer) at a local community center. She <input class="gap-fill" type="text" name="q19"> (help) children with their homework and <input class="gap-fill" type="text" name="q20"> (organize) activities for them. She <input class="gap-fill" type="text" name="q21"> (volunteer) there for two years now, and she <input class="gap-fill" type="text" name="q22"> (love) every minute of it.<br><br>
+
+        In the evenings, Emily <input class="gap-fill" type="text" name="q23"> (usually/spend) time with her family or friends. They <input class="gap-fill" type="text" name="q24"> (often/go) out for dinner or <input class="gap-fill" type="text" name="q25"> (watch) movies together. This evening, she <input class="gap-fill" type="text" name="q26"> (plan) to meet her friends for a movie night.<br><br>
+
+        Emily <input class="gap-fill" type="text" name="q27"> (have) a busy day, but she <input class="gap-fill" type="text" name="q28"> (enjoy) every moment of it. She <input class="gap-fill" type="text" name="q29"> (always/believe) that staying active and involved <input class="gap-fill" type="text" name="q30"> (make) life more fulfilling.<br><br>
+        
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+    <div class="feedback" id="feedback"></div>
+    
+    <script>
+        function checkAnswers() {
+            const form = document.getElementById('gap-fill-form');
+            const feedback = document.getElementById('feedback');
+            const answers = {
+                q1: 'has worked',
+                q2: 'wakes up',
+                q3: 'goes',
+                q4: 'ran',
+                q5: 'makes',
+                q6: 'has',
+                q7: 'decided',
+                q8: 'has always enjoyed',
+                q9: 'has tried',
+                q10: 'has already taught',
+                q11: 'started',
+                q12: 'has moved',
+                q13: 'teaches',
+                q14: 'always like',
+                q15: 'makes',
+                q16: 'has recently introduced',
+                q17: 'has helped',
+                q18: 'often volunteers',
+                q19: 'helps',
+                q20: 'organizes',
+                q21: 'has volunteered',
+                q22: 'loves',
+                q23: 'usually spends',
+                q24: 'often go',
+                q25: 'watch',
+                q26: 'plans',
+                q27: 'has had',
+                q28: 'has enjoyed',
+                q29: 'has always believed',
+                q30: 'makes'
+            };
+            let correct = true;
+            for (const [key, value] of Object.entries(answers)) {
+                const input = form.elements[key];
+                if (input.value.trim().toLowerCase() !== value.toLowerCase()) {
+                    input.style.borderColor = 'red';
+                    correct = false;
+                } else {
+                    input.style.borderColor = 'green';
+                }
+            }
+            if (correct) {
+                feedback.textContent = 'All answers are correct!';
+            } else {
+                feedback.textContent = 'Some answers are incorrect. Please try again.';
+            }
+            feedback.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
